@@ -11,22 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field well well-sm">
-    <%= f.label :author %>
-    <%= f.text_field :author %>
-  </div>
+  <div class="form-group">
+        <%= f.text_field :author, placeholder: "Written By...", class: "form-control" %>
+      </div>
 
-  <div class="field well well-sm">
-    <%= f.label :comment_entry %>
-    <%= f.text_area :comment_entry %>
-  </div>
+      <div class="form-group">
+        <%= f.text_area :comment_entry, placeholder: "Tell Me Something...", class: "form-control" %>
+      </div>
 
-  <div class="field">
-    <%= f.hidden_field :post_id, value: @post.id %>
-  </div>
+      <div class="form-group">
+        <%= f.hidden_field :post_id, value: @post.id %>
+      </div>
 
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+      <div class="form-group">
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      </div>
 <% end %>
