@@ -11,18 +11,24 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-        <%= f.text_field :author, placeholder: "Written By...", class: "form-control" %>
-      </div>
 
+<!-- blog entry title -->
       <div class="form-group">
-        <%= f.text_area :blog_entry, placeholder: "Tell Me Something...", class: "form-control" %>
+        <%= f.text_field :title, placeholder: "Blog Entry Title...", class: "form-control" %>
       </div>
-
+<!-- user id -->
       <div class="form-group">
+        <%= f.hidden_field :user_id, value: current_user.id %>
+      </div>
+<!-- content of post -->
+      <div class="form-group">
+        <%= f.text_area :blog_entry, placeholder: "Tell Us Something...", class: "form-control" %>
+      </div>
+<!-- post id -->
+      <!-- <div class="form-group">
         <%= f.hidden_field :post_id, value: @post.id %>
-      </div>
-
+      </div> -->
+<!-- submit button -->
       <div class="form-group">
         <%= f.submit "Submit", class: "btn btn-primary" %>
       </div>
