@@ -15,9 +15,14 @@ gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+gem 'kaminari'
+##### pagination 
+
 gem 'bootstrap-sass'
 ###### To use bootstrap
 
+gem 'carrierwave', '~> 1.0'
+#### allows to upload files, primarily pics for profiles
 
 gem 'devise'
 ### User Authentication

@@ -18,7 +18,8 @@
       <tr>
         <th scope="row"></th>
         <td><%= post.title %></td>
-        <td><%= post.user.email %></td>
+        <td><p>by <em><%= link_to post.user.username, user_posts_path(id: post.user_id) %></em></p></td>
+        <td><%= post.user.username %></td>
         <td><%= post.blog_entry %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
@@ -27,6 +28,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @posts %>
 
 <br>
 

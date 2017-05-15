@@ -7,12 +7,16 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @post.user.email %>
+  <%= @post.user.username %>
 </p>
+
+
+<!-- we had the avatar image html here -->
+
 
 <p>
   <strong>Blog entry:</strong>
-  <%= @post.blog_entry %>
+  <%= @post.blog_entry.html_safe %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %>
@@ -21,8 +25,10 @@
   <%= render "comments/form", comment: @comment %>
 
   <% @post.comments.each do |comment| %>
-    <p> <%= comment.author %> said....<br />
-        <%= comment.comment_entry%>
+    <p>
+      <%= comment.author %> said....<br />
+      <strong><%=link_to comment.user.username, user_posts_path(id: comment.user_id)%> said... </strong>
+      <%= comment.comment_entry%>
     </p>
   <% end %>
 </div>
